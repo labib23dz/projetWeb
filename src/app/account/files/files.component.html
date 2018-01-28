@@ -1,0 +1,13 @@
+<ul>
+    <li *ngFor="let file of files">
+     <a  class="collection-item" (click)="getseqs(file)">{{file}}</a>
+     <div *ngIf="fileclicked==file" >
+         <li *ngFor="let f of datafile">
+                <span class="black-text text-darken-2">ID:</span> <br/>
+             {{f.sequence_id}} <br/>
+             <span class="black-text text-darken-2">SEQUENCE: </span> <br/>
+             {{f.sequence}}
+             </li> 
+             </div>
+    </li> 
+</ul>

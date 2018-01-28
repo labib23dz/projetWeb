@@ -1,0 +1,24 @@
+<div class="card-panel light-green lighten-2 ">
+ <h5>Resultats de votre recherche, séquences avec {{crit}} :</h5>
+ </div>
+ <div class="collection">
+ <ul  >
+   <li *ngFor="let seq of seqs">
+      
+     <ul >
+        <div class="collection-item">
+            <div class="collection">
+     <li  class="collection-item"> header: <br/>  {{seq.header}} </li> 
+     <li class="collection-item"> id:  {{seq.sequence_id}} </li>
+  <li class="collection-item"> séquence:  <br /> {{seq.sequence}} </li>
+  </div>
+</div>
+	<br />
+     </ul>
+    
+   </li>
+ </ul>
+</div>
+<br/>
+<br/>
+<p><a class="waves-effect waves-light btn" [routerLink]="['/login']" >Logout</a></p>

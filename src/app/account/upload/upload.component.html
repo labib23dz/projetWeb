@@ -1,0 +1,32 @@
+<div class="row">
+<div class="col s6">
+<div class="card-panel light-green lighten-2 ">
+<h5> Ajouter une nouvelle séquence</h5>
+</div>
+
+<form name="form" (ngSubmit)="upload_sequence()" #f="ngForm" novalidate>
+   <div class="upload">
+
+    <label for="0">Nom de votre séquence</label>
+   <input id="0" [(ngModel)]="sequence.nom" #nom="ngModel" [ngModelOptions]="{standalone: true}" placeholder="nom de votre séquence">  <br />
+   
+   
+   <br/>
+   <br/>
+   <label for="1">Séquence (avec header et identifiants)</label>
+   <textarea id="1" class="materialize-textarea" [(ngModel)]="sequence.content" #content="ngModel"  [ngModelOptions]="{standalone: true}" placeholder="copiez vore séquence ici" rows="20" cols="20" required></textarea>
+   
+   <br/>
+<br/>
+<button  class="waves-effect waves-light btn" type="submit" >Upload</button>
+ </div>
+
+</form>
+<br/>
+<br/>
+<p><a class="waves-effect waves-light btn" [routerLink]="['/login']" >Logout</a></p>
+
+</div>
+
+
+</div>

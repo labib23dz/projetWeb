@@ -1,0 +1,55 @@
+
+ <div class="card-panel light-green lighten-2 ">
+    <span class=" text-light-green darken-4">
+<h4>Bienvenue {{currentUser.username}} dans votre espace personnel</h4>
+</span>
+</div>
+<div class="row">
+
+<div class="col s4">
+<div>Rechercher dans mes fichiers:</div>
+
+<p>
+    <input name="group1" type="radio" id="test1" [(ngModel)]="critere" value="gene"/>
+    <label for="test1">Gène</label>
+  </p>
+  <p>
+    <input name="group1" type="radio" id="test2" [(ngModel)]="critere" value="sequence"/>
+    <label for="test2">Séquence</label>
+  </p>
+  <p>
+    <input class="with-gap" name="group1" type="radio" id="test3" [(ngModel)]="critere" value="format" />
+    <label for="test3">Format</label>
+  </p>
+
+  <input [(ngModel)]="val_critere" />
+  <a [routerLink]="['/Recherche', critere, val_critere]" class="btn btn-link">Rechercher</a>
+  
+
+        <router-outlet></router-outlet>
+
+</div>
+<div class="col s4">
+    <div class="collection">
+    Mes fichiers: 
+
+<ul>
+  <!---<li *ngFor="let file of files">
+   <a href="#!" class="collection-item">{{product.name}}</a> 
+  </li> -->
+  <app-files></app-files>
+</ul>
+</div>
+</div>
+
+   
+<div class="col s4">
+<a class="waves-effect waves-light btn" [routerLink]="['/upload']">Ajouter une nouvelle séquence</a>
+ <router-outlet></router-outlet> 
+<br/>
+<br/>
+ <p><a class="waves-effect waves-light btn" [routerLink]="['/login']" >Logout</a></p>
+</div>
+</div>
+
+
